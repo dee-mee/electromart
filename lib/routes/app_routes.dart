@@ -1,3 +1,6 @@
+import '../presentation/review_product_screen/review_product_screen.dart';
+import '../presentation/reorder_screen/reorder_screen.dart';
+import '../presentation/track_order_screen/track_order_screen.dart';
 import 'package:flutter/material.dart';
 import '../presentation/product_detail/product_detail.dart';
 import '../presentation/search_results/search_results.dart';
@@ -21,6 +24,9 @@ class AppRoutes {
   static const String home = '/home-screen';
   static const String productCatalog = '/product-catalog';
   static const String shoppingCart = '/shopping-cart';
+  static const String trackOrderScreen = '/track-order-screen';
+  static const String reorderScreen = '/reorder-screen';
+  static const String reviewProductScreen = '/review-product-screen';
 
   static Map<String, WidgetBuilder> routes = {
     initial: (context) => const SplashScreen(),
@@ -33,6 +39,9 @@ class AppRoutes {
     home: (context) => const HomeScreen(),
     productCatalog: (context) => const ProductCatalog(),
     shoppingCart: (context) => const ShoppingCart(),
+    trackOrderScreen: (context) => const TrackOrderScreen(),
+    reorderScreen: (context) => const ReorderScreen(),
+    reviewProductScreen: (context) => const ReviewProductScreen(),
     // TODO: Add your other routes here
   };
 }

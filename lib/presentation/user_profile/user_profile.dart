@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import 'package:sizer/sizer.dart';
 
-import '../../core/app_export.dart';
+
 import './widgets/avatar_edit_bottom_sheet_widget.dart';
 import './widgets/order_history_card_widget.dart';
 import './widgets/profile_header_widget.dart';
@@ -76,22 +77,7 @@ class _UserProfileState extends State<UserProfile>
     super.dispose();
   }
 
-  void _refreshProfile() async {
-    // Simulate refresh delay
-    await Future.delayed(Duration(seconds: 1));
-
-    if (mounted) {
-      setState(() {
-        // Update any dynamic data here
-      });
-
-      Fluttertoast.showToast(
-        msg: "Profile updated",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-      );
-    }
-  }
+  
 
   void _showAvatarEditBottomSheet() {
     showModalBottomSheet(
@@ -103,11 +89,6 @@ class _UserProfileState extends State<UserProfile>
           setState(() {
             _avatarUrl = imagePath;
           });
-          Fluttertoast.showToast(
-            msg: "Profile picture updated",
-            toastLength: Toast.LENGTH_SHORT,
-            gravity: ToastGravity.BOTTOM,
-          );
         },
       ),
     );
@@ -159,9 +140,7 @@ class _UserProfileState extends State<UserProfile>
   }
 
   Widget _buildPersonalInfoTab() {
-    return RefreshIndicator(
-      onRefresh: () async => _refreshProfile(),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
         controller: _scrollController,
         physics: AlwaysScrollableScrollPhysics(),
         child: Column(
@@ -184,11 +163,7 @@ class _UserProfileState extends State<UserProfile>
                     iconName: "person",
                     subtitle: "Name, email, phone number",
                     onTap: () {
-                      Fluttertoast.showToast(
-                        msg: "Edit personal information",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.BOTTOM,
-                      );
+                      launchUrl(Uri.parse('https://google.com'));
                     },
                   ),
                   ProfileSectionWidget(
@@ -197,11 +172,7 @@ class _UserProfileState extends State<UserProfile>
                     subtitle: "Manage saved cards",
                     trailingText: "2 cards",
                     onTap: () {
-                      Fluttertoast.showToast(
-                        msg: "Manage payment methods",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.BOTTOM,
-                      );
+                      launchUrl(Uri.parse('https://google.com'));
                     },
                   ),
                   ProfileSectionWidget(
@@ -210,11 +181,7 @@ class _UserProfileState extends State<UserProfile>
                     subtitle: "Shipping and billing addresses",
                     trailingText: "3 addresses",
                     onTap: () {
-                      Fluttertoast.showToast(
-                        msg: "Manage addresses",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.BOTTOM,
-                      );
+                      launchUrl(Uri.parse('https://google.com'));
                     },
                     showDivider: false,
                   ),
@@ -381,22 +348,14 @@ class _UserProfileState extends State<UserProfile>
                     iconName: "language",
                     trailingText: "English",
                     onTap: () {
-                      Fluttertoast.showToast(
-                        msg: "Language settings",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.BOTTOM,
-                      );
+                      launchUrl(Uri.parse('https://google.com'));
                     },
                   ),
                   ProfileSectionWidget(
                     title: "Privacy Policy",
                     iconName: "privacy_tip",
                     onTap: () {
-                      Fluttertoast.showToast(
-                        msg: "Privacy policy",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.BOTTOM,
-                      );
+                      launchUrl(Uri.parse('https://google.com'));
                     },
                     showDivider: false,
                   ),
@@ -431,9 +390,7 @@ class _UserProfileState extends State<UserProfile>
   }
 
   Widget _buildOrderHistoryTab() {
-    return RefreshIndicator(
-      onRefresh: () async => _refreshProfile(),
-      child: _orderHistory.isEmpty
+    return _orderHistory.isEmpty
           ? Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -468,27 +425,9 @@ class _UserProfileState extends State<UserProfile>
                 final order = _orderHistory[index];
                 return OrderHistoryCardWidget(
                   order: order,
-                  onTrackOrder: () {
-                    Fluttertoast.showToast(
-                      msg: "Tracking order #${order['id']}",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                    );
-                  },
-                  onReorder: () {
-                    Fluttertoast.showToast(
-                      msg: "Added ${order['productName']} to cart",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                    );
-                  },
-                  onReview: () {
-                    Fluttertoast.showToast(
-                      msg: "Review ${order['productName']}",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                    );
-                  },
+                  onTrackOrder: () => Navigator.pushNamed(context, '/track-order-screen'),
+                  onReorder: () => Navigator.pushNamed(context, '/reorder-screen'),
+                  onReview: () => Navigator.pushNamed(context, '/review-product-screen'),
                 );
               },
             ),
@@ -530,13 +469,6 @@ class _UserProfileState extends State<UserProfile>
               userName: _userName,
               userEmail: _userEmail,
               avatarUrl: _avatarUrl,
-              onEditProfile: () {
-                Fluttertoast.showToast(
-                  msg: "Edit profile",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.BOTTOM,
-                );
-              },
               onEditAvatar: _showAvatarEditBottomSheet,
             ),
             Container(
