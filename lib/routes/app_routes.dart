@@ -11,6 +11,11 @@ import '../presentation/product_catalog/product_catalog.dart';
 import '../presentation/splash_screen/splash_screen.dart';
 import '../presentation/onboarding_flow/onboarding_flow.dart';
 import '../presentation/shopping_cart/shopping_cart.dart';
+import '../presentation/personal_info_screen/personal_info_screen.dart';
+import '../presentation/payment_methods_screen/payment_methods_screen.dart';
+import '../presentation/addresses_screen/addresses_screen.dart';
+import '../presentation/language_screen/language_screen.dart';
+import '../presentation/privacy_policy_screen/privacy_policy_screen.dart';
 
 class AppRoutes {
   // TODO: Add your routes here
@@ -27,6 +32,11 @@ class AppRoutes {
   static const String trackOrderScreen = '/track-order-screen';
   static const String reorderScreen = '/reorder-screen';
   static const String reviewProductScreen = '/review-product-screen';
+  static const String personalInfoScreen = '/personal-info-screen';
+  static const String paymentMethodsScreen = '/payment-methods-screen';
+  static const String addressesScreen = '/addresses-screen';
+  static const String languageScreen = '/language-screen';
+  static const String privacyPolicyScreen = '/privacy-policy-screen';
 
   static Map<String, WidgetBuilder> routes = {
     initial: (context) => const SplashScreen(),
@@ -42,6 +52,11 @@ class AppRoutes {
     trackOrderScreen: (context) => const TrackOrderScreen(),
     reorderScreen: (context) => const ReorderScreen(),
     reviewProductScreen: (context) => const ReviewProductScreen(),
+    personalInfoScreen: (context) => const PersonalInfoScreen(),
+    paymentMethodsScreen: (context) => const PaymentMethodsScreen(),
+    addressesScreen: (context) => const AddressesScreen(),
+    languageScreen: (context) => const LanguageScreen(),
+    privacyPolicyScreen: (context) => const PrivacyPolicyScreen(),
     // TODO: Add your other routes here
   };
 }

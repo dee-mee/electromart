@@ -8,6 +8,8 @@ import './widgets/avatar_edit_bottom_sheet_widget.dart';
 import './widgets/order_history_card_widget.dart';
 import './widgets/profile_header_widget.dart';
 import './widgets/profile_section_widget.dart';
+import '../../theme/app_theme.dart';
+import '../../widgets/custom_icon_widget.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -163,7 +165,7 @@ class _UserProfileState extends State<UserProfile>
                     iconName: "person",
                     subtitle: "Name, email, phone number",
                     onTap: () {
-                      launchUrl(Uri.parse('https://google.com'));
+                      Navigator.pushNamed(context, '/personal-info-screen');
                     },
                   ),
                   ProfileSectionWidget(
@@ -172,7 +174,7 @@ class _UserProfileState extends State<UserProfile>
                     subtitle: "Manage saved cards",
                     trailingText: "2 cards",
                     onTap: () {
-                      launchUrl(Uri.parse('https://google.com'));
+                      Navigator.pushNamed(context, '/payment-methods-screen');
                     },
                   ),
                   ProfileSectionWidget(
@@ -181,7 +183,7 @@ class _UserProfileState extends State<UserProfile>
                     subtitle: "Shipping and billing addresses",
                     trailingText: "3 addresses",
                     onTap: () {
-                      launchUrl(Uri.parse('https://google.com'));
+                      Navigator.pushNamed(context, '/addresses-screen');
                     },
                     showDivider: false,
                   ),
@@ -343,19 +345,12 @@ class _UserProfileState extends State<UserProfile>
                       "Biometric Authentication", _biometricAuth, (value) {
                     setState(() => _biometricAuth = value);
                   }),
-                  ProfileSectionWidget(
-                    title: "Language",
-                    iconName: "language",
-                    trailingText: "English",
-                    onTap: () {
-                      launchUrl(Uri.parse('https://google.com'));
-                    },
-                  ),
+                  
                   ProfileSectionWidget(
                     title: "Privacy Policy",
                     iconName: "privacy_tip",
                     onTap: () {
-                      launchUrl(Uri.parse('https://google.com'));
+                      Navigator.pushNamed(context, '/privacy-policy-screen');
                     },
                     showDivider: false,
                   ),
@@ -385,7 +380,6 @@ class _UserProfileState extends State<UserProfile>
             SizedBox(height: 4.h),
           ],
         ),
-      ),
     );
   }
 
@@ -430,8 +424,7 @@ class _UserProfileState extends State<UserProfile>
                   onReview: () => Navigator.pushNamed(context, '/review-product-screen'),
                 );
               },
-            ),
-    );
+            );
   }
 
   Widget _buildNotificationSetting(
@@ -470,6 +463,7 @@ class _UserProfileState extends State<UserProfile>
               userEmail: _userEmail,
               avatarUrl: _avatarUrl,
               onEditAvatar: _showAvatarEditBottomSheet,
+              onEditProfile: () { print('Edit Profile tapped'); },
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
