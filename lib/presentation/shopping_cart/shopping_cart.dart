@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/utils/currency_formatter.dart';
 import './widgets/cart_item_widget.dart';
 import './widgets/cart_summary_widget.dart';
 import './widgets/empty_cart_widget.dart';
@@ -42,7 +43,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
           CartItem(
             id: '1',
             name: 'iPhone 15 Pro Max',
-            price: 1199.99,
+            price: 165000.00,
             quantity: 1,
             imageUrl:
                 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500',
@@ -53,7 +54,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
           CartItem(
             id: '2',
             name: 'Samsung Galaxy Watch 6',
-            price: 329.99,
+            price: 45000.00,
             quantity: 2,
             imageUrl:
                 'https://images.unsplash.com/photo-1579586337278-3f436f25d4d4?w=500',
@@ -64,7 +65,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
           CartItem(
             id: '3',
             name: 'Sony WH-1000XM5 Headphones',
-            price: 399.99,
+            price: 55000.00,
             quantity: 1,
             imageUrl:
                 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500',

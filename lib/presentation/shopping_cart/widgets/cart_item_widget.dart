@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import '../../../core/utils/currency_formatter.dart';
 import '../shopping_cart.dart';
 
 class CartItemWidget extends StatelessWidget {
@@ -132,7 +133,7 @@ class CartItemWidget extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          '\$${item.price.toStringAsFixed(2)}',
+                          formatCurrencyKsh(item.price),
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium

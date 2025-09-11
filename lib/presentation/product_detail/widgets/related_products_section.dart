@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
+import '../../../core/utils/currency_formatter.dart';
 
 class RelatedProductsSection extends StatelessWidget {
   final List<Map<String, dynamic>> relatedProducts;
@@ -90,7 +91,7 @@ class RelatedProductsSection extends StatelessWidget {
                                 ),
                                 SizedBox(height: 1.h),
                                 Text(
-                                  '\$${(product['price'] as num).toStringAsFixed(2)}',
+                                  formatCurrencyKsh((product['price'] as num).toDouble()),
                                   style: AppTheme
                                       .lightTheme.textTheme.titleMedium
                                       ?.copyWith(

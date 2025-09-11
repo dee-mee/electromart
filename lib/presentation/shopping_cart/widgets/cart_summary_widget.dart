@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/utils/currency_formatter.dart';
 
 class CartSummaryWidget extends StatelessWidget {
   final double subtotal;
@@ -46,7 +47,7 @@ class CartSummaryWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   Text(
-                    '\$${subtotal.toStringAsFixed(2)}',
+                    formatCurrencyKsh(subtotal),
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],
@@ -60,7 +61,7 @@ class CartSummaryWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   Text(
-                    '\$${estimatedTax.toStringAsFixed(2)}',
+                    formatCurrencyKsh(estimatedTax),
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],
@@ -104,7 +105,7 @@ class CartSummaryWidget extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      '-\$${discount.toStringAsFixed(2)}',
+                      '-' + formatCurrencyKsh(discount),
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             color: Theme.of(context).colorScheme.secondary,
                           ),
@@ -128,7 +129,7 @@ class CartSummaryWidget extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    '\$${total.toStringAsFixed(2)}',
+                    formatCurrencyKsh(total),
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w600,
                           color: Theme.of(context).colorScheme.primary,

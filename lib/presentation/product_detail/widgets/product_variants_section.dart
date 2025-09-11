@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
+import '../../../core/utils/currency_formatter.dart';
 import '../../../theme/app_theme.dart';
 
 class ProductVariantsSection extends StatefulWidget {
@@ -142,7 +143,7 @@ class _ProductVariantsSectionState extends State<ProductVariantsSection> {
                         if (storage['priceExtra'] != null &&
                             (storage['priceExtra'] as double) > 0)
                           Text(
-                            '+\$${(storage['priceExtra'] as double).toStringAsFixed(0)}',
+                            '+' + formatCurrencyKsh(storage['priceExtra'] as double),
                             style: AppTheme.lightTheme.textTheme.labelSmall
                                 ?.copyWith(
                               color: isSelected

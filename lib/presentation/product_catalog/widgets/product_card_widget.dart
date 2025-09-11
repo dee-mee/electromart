@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/app_export.dart';
+import '../../../core/utils/currency_formatter.dart';
 
 class ProductCardWidget extends StatelessWidget {
   final Map<String, dynamic> product;
@@ -175,7 +176,7 @@ class ProductCardWidget extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          "\$${discountedPrice.toStringAsFixed(2)}",
+                          formatCurrencyKsh(discountedPrice),
                           style: AppTheme.lightTheme.textTheme.titleMedium
                               ?.copyWith(
                             color: AppTheme.lightTheme.colorScheme.primary,
@@ -185,7 +186,7 @@ class ProductCardWidget extends StatelessWidget {
                         if (hasDiscount) ...[
                           const SizedBox(width: 8),
                           Text(
-                            "\$${originalPrice.toStringAsFixed(2)}",
+                            formatCurrencyKsh(originalPrice),
                             style: AppTheme.lightTheme.textTheme.labelSmall
                                 ?.copyWith(
                               decoration: TextDecoration.lineThrough,

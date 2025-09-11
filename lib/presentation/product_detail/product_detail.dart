@@ -3,6 +3,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../core/app_export.dart';
+import '../../core/utils/currency_formatter.dart';
 import './widgets/add_to_cart_bottom_sheet.dart';
 import './widgets/customer_reviews_content.dart';
 import './widgets/expandable_section.dart';
@@ -31,8 +32,8 @@ class _ProductDetailState extends State<ProductDetail> {
     "id": "1",
     "name":
         "iPhone 15 Pro Max - Latest Flagship Smartphone with Advanced Camera System",
-    "originalPrice": 1299.99,
-    "discountPrice": 1199.99,
+    "originalPrice": 180000.00,
+    "discountPrice": 165000.00,
     "inStock": true,
     "rating": 4.8,
     "reviewCount": 2847,
@@ -51,8 +52,8 @@ class _ProductDetailState extends State<ProductDetail> {
     ],
     "storage": [
       {"id": "1", "size": "256GB", "priceExtra": 0.0},
-      {"id": "2", "size": "512GB", "priceExtra": 200.0},
-      {"id": "3", "size": "1TB", "priceExtra": 500.0}
+      {"id": "2", "size": "512GB", "priceExtra": 25000.0},
+      {"id": "3", "size": "1TB", "priceExtra": 50000.0}
     ],
     "specifications": {
       "Display": "6.7-inch Super Retina XDR",
@@ -112,7 +113,7 @@ Built with aerospace-grade titanium, the iPhone 15 Pro Max is both incredibly st
     {
       "id": "2",
       "name": "AirPods Pro (2nd Gen)",
-      "price": 249.99,
+      "price": 35000.00,
       "rating": 4.7,
       "reviewCount": 1523,
       "image":
@@ -121,7 +122,7 @@ Built with aerospace-grade titanium, the iPhone 15 Pro Max is both incredibly st
     {
       "id": "3",
       "name": "iPhone 15 Pro",
-      "price": 999.99,
+      "price": 140000.00,
       "rating": 4.6,
       "reviewCount": 2156,
       "image":
@@ -130,7 +131,7 @@ Built with aerospace-grade titanium, the iPhone 15 Pro Max is both incredibly st
     {
       "id": "4",
       "name": "MagSafe Charger",
-      "price": 39.99,
+      "price": 5000.00,
       "rating": 4.4,
       "reviewCount": 892,
       "image":
@@ -139,7 +140,7 @@ Built with aerospace-grade titanium, the iPhone 15 Pro Max is both incredibly st
     {
       "id": "5",
       "name": "iPhone 15 Plus",
-      "price": 899.99,
+      "price": 120000.00,
       "rating": 4.5,
       "reviewCount": 1678,
       "image":

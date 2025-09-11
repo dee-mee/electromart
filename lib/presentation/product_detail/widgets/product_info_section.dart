@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
+import '../../../core/utils/currency_formatter.dart';
 
 class ProductInfoSection extends StatelessWidget {
   final Map<String, dynamic> product;
@@ -39,7 +40,7 @@ class ProductInfoSection extends StatelessWidget {
           Row(
             children: [
               Text(
-                '\$${discountPrice.toStringAsFixed(2)}',
+                formatCurrencyKsh(discountPrice),
                 style: AppTheme.lightTheme.textTheme.headlineMedium?.copyWith(
                   color: AppTheme.lightTheme.colorScheme.primary,
                   fontWeight: FontWeight.w700,
@@ -48,7 +49,7 @@ class ProductInfoSection extends StatelessWidget {
               SizedBox(width: 2.w),
               if (originalPrice > discountPrice) ...[
                 Text(
-                  '\$${originalPrice.toStringAsFixed(2)}',
+                  formatCurrencyKsh(originalPrice),
                   style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
                     decoration: TextDecoration.lineThrough,
                     color: AppTheme.lightTheme.colorScheme.onSurface

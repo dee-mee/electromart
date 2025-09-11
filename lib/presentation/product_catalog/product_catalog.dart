@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../core/app_export.dart';
+import '../../core/utils/currency_formatter.dart';
 import './widgets/empty_state_widget.dart';
 import './widgets/filter_chip_widget.dart';
 import './widgets/filter_modal_widget.dart';
@@ -455,7 +456,7 @@ class _ProductCatalogState extends State<ProductCatalog>
       final minPrice = (_activeFilters['minPrice'] as double?) ?? 0;
       final maxPrice = (_activeFilters['maxPrice'] as double?) ?? 2000;
       chips.add(FilterChipWidget(
-        label: "\$${minPrice.round()}-\$${maxPrice.round()}",
+        label: "${formatCurrencyKsh(minPrice.roundToDouble())}-${formatCurrencyKsh(maxPrice.roundToDouble())}",
         isSelected: true,
         onRemove: () {
           setState(() {
