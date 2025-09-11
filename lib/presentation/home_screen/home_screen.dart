@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 1,
       "name": "iPhone 15 Pro Max",
-      "price": "\$1,199",
+      "price": 1199.0,
       "rating": 4.8,
       "reviews": 2847,
       "image":
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 2,
       "name": "Samsung Galaxy S24 Ultra",
-      "price": "\$1,299",
+      "price": 1299.0,
       "rating": 4.7,
       "reviews": 1923,
       "image":
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 3,
       "name": "Google Pixel 8 Pro",
-      "price": "\$999",
+      "price": 999.0,
       "rating": 4.6,
       "reviews": 1456,
       "image":
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 4,
       "name": "OnePlus 12",
-      "price": "\$799",
+      "price": 799.0,
       "rating": 4.5,
       "reviews": 892,
       "image":
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 5,
       "name": "Xiaomi 14 Ultra",
-      "price": "\$899",
+      "price": 899.0,
       "rating": 4.4,
       "reviews": 743,
       "image":
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 6,
       "name": "Nothing Phone (2a)",
-      "price": "\$349",
+      "price": 349.0,
       "rating": 4.3,
       "reviews": 567,
       "image":
@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 7,
       "name": "AirPods Pro 2nd Gen",
-      "price": "\$249",
+      "price": 249.0,
       "rating": 4.9,
       "reviews": 3421,
       "image":
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 8,
       "name": "Sony WH-1000XM5",
-      "price": "\$399",
+      "price": 399.0,
       "rating": 4.8,
       "reviews": 2156,
       "image":
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     {
       "id": 9,
       "name": "Bose QuietComfort Earbuds",
-      "price": "\$279",
+      "price": 279.0,
       "rating": 4.7,
       "reviews": 1834,
       "image":

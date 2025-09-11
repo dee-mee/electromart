@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
+import '../../../core/utils/currency_formatter.dart';
 
 class ProductSectionWidget extends StatelessWidget {
   final String title;
@@ -118,7 +119,7 @@ class ProductSectionWidget extends StatelessWidget {
                     _buildRatingRow(product),
                     SizedBox(height: 1.h),
                     Text(
-                      product["price"] as String,
+                      formatCurrencyKsh(product["price"] as double),
                       style:
                           AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
                         color: AppTheme.accentLight,
